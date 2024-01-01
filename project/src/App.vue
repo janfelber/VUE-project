@@ -1,24 +1,65 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rosey Pixel Template</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!-- templatemo 337 rosey pixel -->
+<!-- 
+Rosey Pixel Template 
+http://www.templatemo.com/preview/templatemo_337_rosey_pixel 
+-->
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+</head>
+<body>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+<section class="banner">
+    <div class="container text-white">
+        <h3>Your</h3>
+        <h1> Online Florist Shop</h1>
     </div>
-  </header>
+</section>
+<header> 
+  <TheNavigation /> 
+</header>
+<div class="content_box">
+    <h2>Feature Product</h2>
+    <div class="cleaner"></div>
+    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+    <div class="cleaner h30"></div>
+    <div id="gallery">
+       
+        <div class="cleaner"></div>
+    </div>
+</div> <!-- end of a content box -->
+<span id="top"></span>
+<div id="templatemo_wrapper">
+    <div id="templatemo_main">
+        
+	</div> <!-- end of main -->
 
-  <RouterView />
+    
+</div> <!-- end of wrapper -->
+
+</body>
+
+
 </template>
+
+<script >
+
+import TheNavigation from './components/TheNavigation.vue'
+import { RouterView } from 'vue-router'
+
+export default {
+  components: {
+    TheNavigation
+  }
+}
+</script>
+
 
 <style scoped>
 header {
