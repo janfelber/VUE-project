@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Ruza",
+        "category": "flowers",
+        "image": "https://www.donaskakvetovpoprad.sk/fotky49660/fotos/_vyr_482_1000-1000-ruza-cervena-stopka-2.jpg",
+        "price": 4
+    },
+    {
+        "id": 2,
+        "name": "Tulipan",
+        "category": "flowers",
+        "image": "https://www.florea.cz/foto/vbnGalerie/t/tulipan-en-ben-van-zanten-v33n3.jpg",
+        "price": 3
+    },
+    {
+        "id": 2,
+        "name": "Ceramic pot",
+        "category": "pots",
+        "image": "https://dilka.xcdn.nl/dilka/images/catalog/product/00018135_1.jpg?f=rs:fit:600:600/g:ce&s=2d2d",
+        "price": 3
+    }
+]

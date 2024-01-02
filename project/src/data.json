@@ -1,0 +1,21 @@
+{
+    "store": [
+        {
+            "name": "Flowers",
+            "slug": "flowers",
+            "id": 1
+        },
+        {
+            "name": "Boquets",
+            "slug": "boquets",
+            "id": 2
+
+           
+        },
+        {
+            "name": "Pots",
+            "slug": "pots",
+            "id": 3
+        }
+    ]
+}

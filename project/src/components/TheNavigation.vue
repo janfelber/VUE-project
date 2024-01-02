@@ -1,22 +1,24 @@
 <template>
-    <div id="nav">
-      <router-link to="/"> Home </router-link>
-      <router-link v-for="nav in navbar1" :key="nav.id" :to="{ name: 'nav', params: { slug: nav.slug } }">
-        {{ nav.name }}
-      </router-link>
-    </div>
-  </template>
-  
-  <script>
-  import dataDestinations from '../navigation.json'
-  
-  export default {
-    name: 'TheNavigation',
-    data() {
-      return {
-        navbar1: dataDestinations.navbar1
-      }
-    }
-  }
-  </script>
-  
+    <div>
+      <nav id="nav">
+        <router-link to="/">HOME</router-link>
+        <router-link v-for="category in store" :key="category.id"
+                     :to="{ name: 'store', params: { slug: category.slug } }">
+          {{ category.name }}
+        </router-link>
+      </nav>
+    </div>  
+</template>
+
+<script>
+import Store from '../data.json';
+
+export default {
+  data() {
+    return {
+      name: 'TheNavigation',
+      store: Store.store,
+    };
+  },
+};
+</script>

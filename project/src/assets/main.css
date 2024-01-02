@@ -326,10 +326,12 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 }
 
 
-.container{
-	padding-left:10%;
-	padding-right:10%;
-}
+.container {
+	padding-top: 80px; 
+	padding-left: 10%;
+	padding-right: 10%;
+  }
+  
 
 .row{
 	display:flex;
@@ -342,19 +344,19 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	position:relative;
 	top:0px;
 }
-header{
+header {
 	position: fixed;
-	top:0;
-	left:0;
-	right:0;
-	width:inherit;
-	height:80px;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: inherit;
+	height: 80px; 
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	background-color: white;
-	z-index: 1;
-}
+  }
+  
 
 .col-50{
 	width:50%;
