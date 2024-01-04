@@ -18,16 +18,6 @@ body {
 	background-repeat: no-repeat
 }
 
-a, a:link, a:visited { 
-	color: #fe3203; 
-	font-weight: 400; 
-	text-decoration: underline; 
-}
-
-a:hover { 
-	text-decoration: none; 
-}
-
 a.gototop { 
 	display: block; 
 	clear: both; 
@@ -340,23 +330,6 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	gap:20px;
 }
 
-.main-header{
-	position:relative;
-	top:0px;
-}
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: inherit;
-	height: 80px; 
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	background-color: white;
-  }
-  
 
 .col-50{
 	width:50%;

@@ -1,12 +1,30 @@
 <template>
-  <header>
-    <TheNavigation />
-  </header>
-  <div class="container">
-    <RouterView />
+  <div id="app">
+    <header>
+      <TheNavigation />
+    </header>
+    <div class="content flex-grow">
+      <RouterView />
+      <div>
+        <!-- Your cart content goes here -->
+      </div>
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
+
+<style scoped>
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flex-grow {
+  flex: 1;
+  min-height: 0;
+}
+</style>
 
 <script>
 import { RouterView } from 'vue-router'
@@ -17,6 +35,7 @@ export default {
   components: {
     TheNavigation,
     Footer,
+    RouterView
   }
 }
 </script>

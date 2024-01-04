@@ -10,13 +10,15 @@ export const useCartStore = defineStore('cartStore', {
     getters: {
         getProductId: (state) => (productId) => {
             return state.products.find(product => product.id === productId);
-        }
+        },
+        totalSum: (state) => {
+            return state.cart.reduce((sum, product) => sum + product.price, 0);
+        },
+        getCartItemCount: (state) => state.count
 
     },
     actions: {
         addToCart(productId) {
-            console.log("addToCart");
-
             if (this.getProductId(productId)) {
 
                 this.cart.push(this.getProductId(productId));
@@ -24,10 +26,28 @@ export const useCartStore = defineStore('cartStore', {
                 this.count++;
 
                 console.log(this.cart);
+                console.log("addToCart");
             } else {
                 console.warn(`Product with ID ${productId} not found.`);
             }
+        },
+        getCart() {
+            return this.cart;
+        },
+        removeFromCart(cartItemId) {
+            const index = this.cart.findIndex(product => product.id === cartItemId);
+
+            if (index !== -1) {
+                this.cart.splice(index, 1);
+                this.count--;
+                console.log(this.cart);
+                console.log("remove from cart");
+
+            } else {
+                console.warn(`Product with ID ${cartItemId} not found in the cart.`);
+            }
         }
+
     }
 
 })
