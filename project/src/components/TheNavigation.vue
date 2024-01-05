@@ -10,9 +10,14 @@
       >
         {{ category.name }}
       </router-link>
+
       <router-link to="/cart" class="cart-link">
         <v-icon>mdi-cart</v-icon>
         <span class="cart-badge" v-if="cartItemCount > 0">{{ cartItemCount }}</span>
+      </router-link>
+      <router-link to="/orders" class="orders-link">
+        <v-icon>mdi-script-text</v-icon>
+        <span class="orders-badge" v-if="ordersCount > 0">{{ ordersCount }}</span>
       </router-link>
     </nav>
   </div>
@@ -46,12 +51,17 @@ a:hover {
   text-decoration: underline; 
 }
 
-.cart-link {
-  margin-left: auto; 
+.cart-link,
+.orders-link {
   position: relative;
 }
 
-.cart-badge {
+.cart-link {
+  margin-left: auto;
+}
+
+.cart-badge,
+.orders-badge {
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -86,7 +96,10 @@ export default {
   },
   computed: {
     cartItemCount() {
-      return this.cartStore.count;
+      return this.cartStore.getCartItemCount;
+    },
+    ordersCount () {
+      return this.cartStore.ordersCount;
     }
   }
 };

@@ -6,7 +6,7 @@
     <div class="content flex-grow">
       <RouterView />
       <div>
-        <!-- Your cart content goes here -->
+       
       </div>
     </div>
     <Footer />

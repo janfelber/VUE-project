@@ -7,7 +7,7 @@
           <v-card>
             <v-img :src="product.image" :alt="product.name"></v-img>
             <v-card-title>{{ product.name }}</v-card-title>
-            <v-card-subtitle>Price: {{ product.price }}</v-card-subtitle>
+            <v-card-subtitle>Price: {{ product.price }} €</v-card-subtitle>
             <v-card-actions>
               <v-btn @click="cartStore.addToCart(product.id)" color="primary">Add to Cart</v-btn>
             </v-card-actions>
@@ -21,9 +21,9 @@
 <style scoped>
 
 .custom-container {
-  max-width: 1200px; /* Adjust the max-width as needed */
-  margin: auto; /* Center the container */
-  padding: 20px; /* Add padding as needed */
+  max-width: 1200px; 
+  margin: auto; 
+  padding: 20px; 
 }
 </style>
 

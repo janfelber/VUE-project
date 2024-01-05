@@ -17,10 +17,46 @@
       <p v-if="cartTotalSum" class="total-sum">Total Sum: {{ cartTotalSum }} €</p>
       <p v-else>Your cart is empty.</p>
     </div>
+
+    <div v-show="cartTotalSum"  >
+      <v-btn  @click="cartStore.addToOrders()" class="order-button" >PAY {{ cartTotalSum }} €</v-btn>
+    </div>
+
+    <br>
   </div>
 </template>
 
+<script>
+import { useCartStore } from "../stores/CartStore";
+
+export default {
+  data() {
+    return {
+      cartStore: useCartStore(),
+    };
+  },
+  computed: {
+    cartItems() {
+      return this.cartStore.getCart;
+    },
+    cartTotalSum() {
+      return this.cartStore.totalSum;
+    }
+  },
+};
+</script>
+
 <style scoped>
+
+.order-button{
+  font-size: 17px;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 3px;
+  background-color: green;
+  color: white;
+  text-transform: none;
+}
 .cart-item {
   margin: 20px;
   padding: 10px;
@@ -89,22 +125,4 @@
 }
 </style>
 
-<script>
-import { useCartStore } from "../stores/CartStore";
 
-export default {
-  data() {
-    return {
-      cartStore: useCartStore(),
-    };
-  },
-  computed: {
-    cartItems() {
-      return this.cartStore.getCart();
-    },
-    cartTotalSum() {
-      return this.cartStore.totalSum;
-    }
-  },
-};
-</script>

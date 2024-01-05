@@ -21,7 +21,7 @@
             <v-card>
               <v-img :src="item.image" :alt="item.name"></v-img>
               <v-card-title>{{ item.name }}</v-card-title>
-              <v-card-subtitle>Price: {{ item.price }}</v-card-subtitle>
+              <v-card-subtitle>Price: {{ item.price }} €</v-card-subtitle>
               <v-card-actions>
                 <v-btn @click="cartStore.addToCart(item.id)" color="primary">Add to Cart</v-btn>
               </v-card-actions>

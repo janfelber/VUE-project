@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import Product from '../components/Product.vue'
 import Cart from '../components/Cart.vue'
+import Order from '../components/Order.vue'
 
 
 const router = createRouter({
@@ -25,11 +26,15 @@ const router = createRouter({
 
     },
     {
+      path: '/orders',
+      name: 'orders',
+      component: Order
+    },
+    {
       path: '/store/:slug',
       name: 'store',
       component: Product,
       props: true,
-      
     },
   ],
 });

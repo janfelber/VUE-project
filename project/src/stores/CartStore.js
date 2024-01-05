@@ -3,8 +3,11 @@ import products from '../products.json'
 export const useCartStore = defineStore('cartStore', {
     state: () => ({
         count: 0,
+        ordersCount: 0,
         products: products,
-        cart: []
+        cart: [],
+        orders: []
+
 
     }),
     getters: {
@@ -14,7 +17,15 @@ export const useCartStore = defineStore('cartStore', {
         totalSum: (state) => {
             return state.cart.reduce((sum, product) => sum + product.price, 0);
         },
-        getCartItemCount: (state) => state.count
+        getCartItemCount: (state) => state.count,
+        getOrderItemCount: (state) => state.ordersCount,
+        getCart() {
+            return this.cart;
+        },
+        getOrders() {
+            return this.orders;
+        }
+        
 
     },
     actions: {
@@ -26,26 +37,34 @@ export const useCartStore = defineStore('cartStore', {
                 this.count++;
 
                 console.log(this.cart);
-                console.log("addToCart");
             } else {
                 console.warn(`Product with ID ${productId} not found.`);
             }
         },
-        getCart() {
-            return this.cart;
-        },
+
         removeFromCart(cartItemId) {
             const index = this.cart.findIndex(product => product.id === cartItemId);
 
             if (index !== -1) {
                 this.cart.splice(index, 1);
                 this.count--;
+
                 console.log(this.cart);
-                console.log("remove from cart");
 
             } else {
                 console.warn(`Product with ID ${cartItemId} not found in the cart.`);
             }
+        },
+        addToOrders() {
+            this.orders.push(this.cart)
+
+            this.ordersCount++;
+
+            this.cart = []
+            this.count = 0
+
+            console.log(this.orders)
+
         }
 
     }
