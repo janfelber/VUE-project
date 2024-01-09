@@ -4,6 +4,7 @@
       <TheNavigation />
     </header>
     <div class="content flex-grow">
+      <Cart />
       <RouterView />
       <div>
        
@@ -31,6 +32,7 @@ import { RouterView } from 'vue-router'
 import TheNavigation from './components/TheNavigation.vue'
 import Footer from './components/Footer.vue'
 
+//The code exports an object that contains component definitions used in this Vue component or page.
 export default {
   components: {
     TheNavigation,

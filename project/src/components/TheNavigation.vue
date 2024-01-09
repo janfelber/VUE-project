@@ -2,6 +2,7 @@
   <div>
     <nav id="nav">
       <router-link to="/">Home </router-link>
+      <!-- Listing categories and their links dynamically using v-for -->
       <router-link
         v-for="category in store"
         :key="category.id"
@@ -91,7 +92,7 @@ export default {
     return {
       name: 'TheNavigation',
       store: Store.store,
-      cartStore: useCartStore(),
+      cartStore: useCartStore(), //// Create an instance of the CartStore 
     };
   },
   computed: {

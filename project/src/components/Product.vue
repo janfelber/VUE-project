@@ -3,6 +3,7 @@
   <div>
     <v-container class="custom-container">
       <v-row>
+        <!--Get current product with his index in array-->
         <v-col v-for="(product, index) in filteredProducts" :key="index" cols="12" md="4">
           <v-card>
             <v-img :src="product.image" :alt="product.name"></v-img>
@@ -34,7 +35,13 @@ import { useCartStore } from "../stores/CartStore"
 export default {
   computed: {
     filteredProducts() {
+      //Get current slug
       const categorySlug = this.$route.params.slug;
+
+      // Filter products based on the category that matches the current slug in the route
+      // The function in the 'filter' method checks if the 'category' of each product
+      // matches the current categorySlug
+      // An array of products that belong to the current category.
       return this.products.filter(product => product.category === categorySlug);
     }
   },

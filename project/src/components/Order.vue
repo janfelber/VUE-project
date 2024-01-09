@@ -40,7 +40,7 @@
     },
     methods: {
       calculateTotalOrderPrice(order) {
-        let totalOrderPrice = 0; //lepsie let ako const kedze tato honota sa moze menit pocas cyklu
+        let totalOrderPrice = 0; //lepsie let ako const kedze tato hodnota sa moze menit pocas cyklu
         for (const item of order) { //lepsie pouzit of kedze vieme ze indexy su cele cisla a prepokladame ze objednavky su pole
           totalOrderPrice += item.price;
         }
